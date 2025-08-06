@@ -1,0 +1,23 @@
+pdfreader:
+  documents:
+    baseFolders:
+      - "E:\\EL OFFICE\\PKNS_document"
+      - "E:\\EL OFFICE\\PKNS_document - Copy"
+
+  watch:
+    enabled: true
+    tempFolders:
+      - "E:\\EL OFFICE\\PKNS_document"
+      - "E:\\EL OFFICE\\PKNS_document - Copy"
+
+  index:
+    tempDirs:
+      - "E:/PDF READER Search (concurrency)/PDF READER Search/PDF READER/PKNS_index_temp"
+      - "E:/PDF READER Search (concurrency)/PDF READER Search/PDF READER/ANOTHER_index_temp"
+    permDirs:
+      - "E:/PDF READER Search (concurrency)/PDF READER Search/PDF READER/PKNS_index_perm"
+      - "E:/PDF READER Search (concurrency)/PDF READER Search/PDF READER/ANOTHER_index_perm"
+
+
+server:
+  port: 9090

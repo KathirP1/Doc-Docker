@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "branch": "COSEC",
+    "type": "pdf",
+    "title": "React Guide 2023",
+    "url": "/img/test.pdf",
+    "meta": "1.2 MB • PDF",
+    "description": "Complete guide to React hooks and functional components",
+    "date": "2 days ago"
+  },
+  {
+    "id": 2,
+    "branch": "BKNS",
+    "type": "image",
+    "title": "Bali Sunset",
+    "url": "/img/sunset.jpg",
+    "meta": "2.1 MB • JPG",
+    "description": "Beautiful sunset photographed in Bali last summer",
+    "date": "1 week ago"
+  }
+]
