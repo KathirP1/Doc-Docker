@@ -1,20 +1,26 @@
-# Use Java 21 base image
-FROM eclipse-temurin:21-jdk as runtime
+# ---------- Build Stage ----------
+FROM eclipse-temurin:21-jdk as builder
 
-# Set working directory
 WORKDIR /app
 
-# Copy the JAR from target directory
-COPY target/pdfreader-0.0.1-SNAPSHOT.jar app.jar
+COPY . .
 
-# Copy the application.yml from the src folder
+# Build using Maven wrapper (no need to install Maven)
+RUN ./mvnw clean package -DskipTests
+
+# ---------- Runtime Stage ----------
+FROM eclipse-temurin:21-jdk
+
+WORKDIR /app
+
+# Copy the built JAR from previous stage
+COPY --from=builder /app/target/pdfreader-0.0.1-SNAPSHOT.jar app.jar
+
+# Copy config
 COPY src/main/resources/application.yml /app/config/application.yml
 
-# Expose the port your app runs on
 EXPOSE 9090
 
-# Set config location so Spring reads application.yml
 ENV SPRING_CONFIG_LOCATION=classpath:/,file:/app/config/
 
-# Run the Spring Boot app
 ENTRYPOINT ["java", "-jar", "app.jar"]
